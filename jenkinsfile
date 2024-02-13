@@ -1,27 +1,27 @@
 pipeline {
  environment {
- imagename = “adithyak21/jenkins-docker”
- registryCredential = ‘adithya-docckerhub’
+ imagename = “bksingh98/jenkins ”
+ registryCredential = ‘bksingh98’
  dockerImage = ‘’
  }
  agent any
  stages {
  stage(‘Cloning Git’) {
  steps {
- git([url: ‘https://github.com/adithyak21/simple-docker.git', branch: ‘main’])
+ git([url: ‘https://github.com/Bkrsingh/first-git.git', branch: ‘main’])
  }
  }
  stage(‘Building image’) {
  steps{
  script {
- dockerImage = docker.build imagename
+ dockerImage = docker.build bksingh98/jenkins
  }
  }
  }
  stage(‘Running image’) {
  steps{
  script {
- sh “docker run ${imagename}:latest”
+ sh “docker run ${bksingh98/jenkins}:latest”
  }
  }
  }
